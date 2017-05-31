@@ -1,0 +1,29 @@
+## JVM configuration
+
+# Xms represents the initial size of total heap space
+# Xmx represents the maximum size of total heap space
+## 4GB Machine configuration
+
+-Xms3g
+-Xmx3g
+-XX:MaxMetaspaceSize=2560m
+-Xmn2560m
+
+################################################################
+## Expert settings
+################################################################
+##
+## All settings below this section are considered
+## expert settings. Don't tamper with them unless
+## you understand what you are doing
+##
+################################################################
+
+## GC configuration
+-XX:+UseParNewGC
+-XX:+UseConcMarkSweepGC
+-XX:+CMSParallelRemarkEnabled
+-XX:CMSInitiatingOccupancyFraction=90
+-XX:+UseCMSInitiatingOccupancyOnly
+-XX:+ScavengeBeforeFullGC
+-XX:+CMSScavengeBeforeRemark
